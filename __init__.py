@@ -5,16 +5,16 @@ bl_info = {
     "blender": (4, 1, 0),
     "location": "F3",
     "description": "",
-    "warning": "alpha",
+    "warning": "Test",
     "doc_url": "",
-    "category": "Modifier",
+    "category": "",
 }
 
 import bpy
 from .ops import data_transfer
 
 
-_classes = [data_transfer.MODQACT_OT_MOD_data_transfer, ]
+_classes = [data_transfer.ADDONNAME_OT_MOD_data_transfer, ]
 
 def register():
     for cls in _classes:

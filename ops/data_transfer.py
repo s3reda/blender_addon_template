@@ -1,6 +1,6 @@
 import bpy
 
-class MODQACT_OT_MOD_data_transfer(bpy.types.Operator):
+class ADDONNAME_OT_MOD_data_transfer(bpy.types.Operator):
     bl_idname = "modqact.mod_data_trensfer"
     bl_label = "Set Data Transfer Targeted"
     bl_options = {'REGISTER', 'UNDO'}
