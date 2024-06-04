@@ -3,7 +3,7 @@ bl_info = {
     "author": "sereda",
     "version": (0, 0, 1),
     "blender": (4, 1, 0),
-    "location": "F3",
+    "location": "",
     "description": "",
     "warning": "Test",
     "doc_url": "",
@@ -11,16 +11,28 @@ bl_info = {
 }
 
 import bpy
-from .ops import data_transfer
+from .ops import module
+from . import ui
+from . import preferences
 
 
-_classes = [data_transfer.ADDONNAME_OT_MOD_data_transfer, ]
+_classes = (
+    module.ADDONNAME_OT_MOD_my_operator,
+    module.OBJECT_OT_my_operator
+)
+
+# register, unregister = bpy.utils.register_classes_factory(_classes)
+
 
 def register():
     for cls in _classes:
         bpy.utils.register_class(cls)
+    preferences.register()
+    ui.register()
 
 
 def unregister():
     for cls in reversed(_classes):
         bpy.utils.unregister_class(cls)
+    preferences.unregister()
+    ui.unregister()
